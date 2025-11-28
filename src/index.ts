@@ -7,7 +7,8 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("GitHub App webhook listener is running!");
+    const payload = req.body;
+    res.send("GitHub App webhook listener is running!" + payload);
 });
 
 app.listen(PORT, () => {
